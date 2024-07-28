@@ -1,0 +1,15 @@
+.headerContainer{
+  display: flex;
+  flex-direction: row;
+  background-color: darkseagreen;
+  justify-content: space-around;
+  .navContainer{
+    display: flex;
+    background-color: aqua;
+    width: 90%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  }
+
