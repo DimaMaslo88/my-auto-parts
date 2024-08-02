@@ -6,9 +6,9 @@ import style from 'styles/header/header.module.scss'
     return (
         <div className={style.headerContainer}>
             <nav className={style.navContainer}>
-            <h3>Главная</h3>
-            <h3>Список Запчастей</h3>
-            <h3>Фото и видео отчет</h3>
+            <h3 className={style.h3}>Главная</h3>
+            <h3  className={style.h3}>Список Запчастей</h3>
+            <h3  className={style.h3}>Фото и видео отчет</h3>
             </nav>
             <AvatarIcon   width={100}
                           height={100}
