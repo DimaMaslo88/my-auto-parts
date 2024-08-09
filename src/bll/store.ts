@@ -1,6 +1,6 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import thunkMiddleware from "redux-thunk"
-import { sparePartsReducer} from "./reducers/spareParst";
+import { sparePartsReducer} from "./slices/spareParst";
 
 const rootReducer = combineReducers({
     spareParts:sparePartsReducer
