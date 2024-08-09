@@ -7,6 +7,9 @@ const slice=createSlice({
     initialState:userCarsState,
     reducers:{
 
-    }
+    },
+    extraReducers:(builder => {
+
+    })
 })
 export const userCarsReducer = slice.reducer
