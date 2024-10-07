@@ -19,7 +19,7 @@ const slice = createSlice({
     name: "UserCars",
     initialState: userCarsState,
     reducers: {
-      setCarInfo(state, action: PayloadAction<{ userCars: userCarType[] }>) {
+      setCarInfo(state, action: PayloadAction<{ userCars: userCarType[]}>) {
             return action.payload.userCars.map(m => ({...m}))
         }
     },
