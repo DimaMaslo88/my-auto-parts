@@ -8,26 +8,34 @@ const userCarsState = [] as userCarType[]
 // Thunks
 export const GetUserCar = createAsyncThunk('userCars/getUserCar', async (thunkAPI) => {
     try {
-        await MainPageApi.getCarInfo()
+        const res =  await MainPageApi.getCarInfo()
+       const userCars = res.data.data
+        return {userCars}
     } catch (err) {
         console.log(err)
     } finally {
         console.log('he;llo')
     }
+    return false
 })
 const slice = createSlice({
     name: "UserCars",
     initialState: userCarsState,
     reducers: {
-      setCarInfo(state, action: PayloadAction<{ userCars: userCarType[]}>) {
-            return action.payload.userCars.map(m => ({...m}))
-        }
+      // setCarInfo(state, action: PayloadAction<{ userCars: userCarType[]}>) {
+      //       return action.payload.userCars.map(m => ({...m}))
+      //   }
     },
     extraReducers: (builder => {
-
+builder.addCase(GetUserCar.fulfilled,(state,action)=>{
+    if(action.payload){
+        return action.payload.userCars.map((m:userCarType) => ({...m}))
+    }
+return false
+})
     })
 })
 export const userCarsReducer = slice.reducer
-export const {
-    setCarInfo
-} = slice.actions
+// export const {
+//
+// } = slice.actions
