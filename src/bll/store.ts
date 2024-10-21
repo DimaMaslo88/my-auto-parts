@@ -1,29 +1,22 @@
-import {combineReducers, configureStore, ThunkAction, ThunkDispatch} from "@reduxjs/toolkit";
-import thunkMiddleware from "redux-thunk"
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
+
 import {userCarsReducer} from "bll/slices/userCars";
+import {appReducer} from "bll/slices/appSlice";
 import { sparePartsReducer} from "./slices/spareParst";
-import {useDispatch} from "react-redux";
+
 
 const rootReducer = combineReducers({
     spareParts:sparePartsReducer,
-    userCars:userCarsReducer
+    userCars:userCarsReducer,
+    app:appReducer
 })
 export const store = configureStore({
     reducer:rootReducer,
 
 })
-export type RootReducerType = ReturnType<typeof rootReducer>
-// export type ActionStateType = NewsReducerActionType
-//     |AppReducerActionType
-export type AppDispatch = ThunkDispatch<RootReducerType,
-    undefined,
-    ActionStateType>;
-export const useAppDispatch = (): AppDispatch => useDispatch<AppDispatch>()
+export type RootReducerType = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
 
-export type AppThunkType<ReturnType = void> = ThunkAction<ReturnType,
-    RootReducerType,
-    undefined,
-    ActionStateType>;
 
 // @ts-ignore
 window.store = store

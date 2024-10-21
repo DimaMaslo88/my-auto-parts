@@ -2,11 +2,13 @@ import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {userCarType} from "types/userCarsTypes";
 import {thunk} from "redux-thunk";
 import {MainPageApi} from "dal/mainPage-api/mainPage-api";
+import {setLoading} from "bll/slices/appSlice";
 
 const userCarsState = [] as userCarType[]
 
 // Thunks
-export const GetUserCar = createAsyncThunk('userCars/getUserCar', async (thunkAPI) => {
+export const GetUserCar = createAsyncThunk('userCars/getUserCar', async (value,thunkAPI) => {
+thunkAPI.dispatch(setLoading({isLoading:true}))
     try {
         const res =  await MainPageApi.getCarInfo()
        const userCars = res.data.data
@@ -14,7 +16,7 @@ export const GetUserCar = createAsyncThunk('userCars/getUserCar', async (thunkAP
     } catch (err) {
         console.log(err)
     } finally {
-        console.log('he;llo')
+        thunkAPI.dispatch(setLoading({isLoading:false}))
     }
     return false
 })
@@ -22,9 +24,9 @@ const slice = createSlice({
     name: "UserCars",
     initialState: userCarsState,
     reducers: {
-      // setCarInfo(state, action: PayloadAction<{ userCars: userCarType[]}>) {
-      //       return action.payload.userCars.map(m => ({...m}))
-      //   }
+       setCarInfo(state, action: PayloadAction<{ userCars: userCarType[]}>) {
+            return action.payload.userCars.map(m => ({...m}))
+         }
     },
     extraReducers: (builder => {
 builder.addCase(GetUserCar.fulfilled,(state,action)=>{
@@ -36,6 +38,6 @@ return false
     })
 })
 export const userCarsReducer = slice.reducer
-// export const {
-//
-// } = slice.actions
+export const {
+setCarInfo
+} = slice.actions

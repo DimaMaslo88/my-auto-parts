@@ -26,6 +26,7 @@
   "rules": {
     "no-debugger": "off",
     "no-console": "off",
+    "no-param-reassign": 0,
     "react/require-default-props": "off",
     "react/button-has-type": "off",
     "no-shadow": "off",

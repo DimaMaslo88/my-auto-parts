@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import img from 'ui/assets/images/1200x900n.webp'
 import style from 'styles/mainPage/mainPage.module.scss'
-import {useDispatch} from "react-redux";
 import {GetUserCar} from "bll/slices/userCars";
+import {useAppDispatch} from "utils/hooks";
 
 
 
 
 export const MainPage = () => {
-const dispatch =useDispatch()
+const dispatch =useAppDispatch()
     useEffect(()=>{
 dispatch(GetUserCar())
 
