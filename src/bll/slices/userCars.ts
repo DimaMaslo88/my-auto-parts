@@ -7,11 +7,12 @@ import {setLoading} from "bll/slices/appSlice";
 const userCarsState = [] as userCarType[]
 
 // Thunks
-export const GetUserCar = createAsyncThunk('userCars/getUserCar', async (value,thunkAPI) => {
+export const GetUserCar = createAsyncThunk('userCars/getUserCar', async (arg,thunkAPI) => {
 thunkAPI.dispatch(setLoading({isLoading:true}))
     try {
+
         const res =  await MainPageApi.getCarInfo()
-       const userCars = res.data.data
+       const userCars = res.data
         return {userCars}
     } catch (err) {
         console.log(err)
