@@ -1,10 +1,9 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {userCarType} from "types/userCarsTypes";
-import {thunk} from "redux-thunk";
 import {MainPageApi} from "dal/mainPage-api/mainPage-api";
 import {setLoading} from "bll/slices/appSlice";
+import {UserCarsTypes} from "types/userCarsTypes";
 
-const userCarsState = [] as userCarType[]
+const userCarsState = [] as UserCarsTypes[]
 
 // Thunks
 export const GetUserCar = createAsyncThunk('userCars/getUserCar', async (arg,thunkAPI) => {
@@ -25,14 +24,14 @@ const slice = createSlice({
     name: "UserCars",
     initialState: userCarsState,
     reducers: {
-       setCarInfo(state, action: PayloadAction<{ userCars: userCarType[]}>) {
+       setCarInfo(state, action: PayloadAction<{ userCars: UserCarsTypes[]}>) {
             return action.payload.userCars.map(m => ({...m}))
          }
     },
     extraReducers: (builder => {
 builder.addCase(GetUserCar.fulfilled,(state,action)=>{
     if(action.payload){
-        return action.payload.userCars.map((m:userCarType) => ({...m}))
+        return action.payload.userCars.map((m:UserCarsTypes) => ({...m}))
     }
 return false
 })

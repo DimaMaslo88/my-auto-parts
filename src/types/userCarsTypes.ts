@@ -1,4 +1,4 @@
-export type userCarType={
+export type UserCarsTypes={
     id: number,
     car: string,
     model: string,

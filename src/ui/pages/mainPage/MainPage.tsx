@@ -3,12 +3,15 @@ import img from 'ui/assets/images/1200x900n.webp'
 import style from 'styles/mainPage/mainPage.module.scss'
 import {GetUserCar} from "bll/slices/userCars";
 import {useAppDispatch} from "utils/hooks";
+import {selectUserCars} from "bll/selectors";
+import {useSelector} from "react-redux";
 
 
 
 
 export const MainPage = () => {
 const dispatch =useAppDispatch()
+    const userCars = useSelector(selectUserCars)
     useEffect(()=>{
 dispatch(GetUserCar())
 
