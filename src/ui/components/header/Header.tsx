@@ -5,14 +5,17 @@ import {useNavigate} from "react-router-dom";
 
  export const Header = () => {
     const navigate =useNavigate()
-     const onClickNavigateToPartsHandler =()=>{
+     const navigateToPartsHandler =()=>{
         navigate('parts')
      }
+    const navigateToMainHandler =()=>{
+        navigate('mainPage')
+    }
     return (
         <div className={style.headerContainer}>
             <nav className={style.navContainer}>
-            <h3 className={style.h3}>Главная</h3>
-            <h3  className={style.h3} onClick={onClickNavigateToPartsHandler}>Список Запчастей</h3>
+            <h3 className={style.h3} onClick={navigateToMainHandler}>Главная</h3>
+            <h3  className={style.h3} onClick={navigateToPartsHandler}>Список Запчастей</h3>
             <h3  className={style.h3}>Фото и видео отчет</h3>
             </nav>
             <AvatarIcon   width={100}

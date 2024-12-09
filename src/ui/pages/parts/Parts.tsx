@@ -3,7 +3,7 @@ import React from 'react';
 export const Parts = () => {
     return (
         <div>
-            Hello
+            <h1>Список Запчастей</h1>
         </div>
     );
 };
