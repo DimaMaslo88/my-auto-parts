@@ -1,13 +1,18 @@
 import React from 'react';
 import {AvatarIcon} from "ui/assets/icons/Avatar-icon";
 import style from 'styles/header/header.module.scss'
+import {useNavigate} from "react-router-dom";
 
  export const Header = () => {
+    const navigate =useNavigate()
+     const onClickNavigateToPartsHandler =()=>{
+        navigate('parts')
+     }
     return (
         <div className={style.headerContainer}>
             <nav className={style.navContainer}>
             <h3 className={style.h3}>Главная</h3>
-            <h3  className={style.h3}>Список Запчастей</h3>
+            <h3  className={style.h3} onClick={onClickNavigateToPartsHandler}>Список Запчастей</h3>
             <h3  className={style.h3}>Фото и видео отчет</h3>
             </nav>
             <AvatarIcon   width={100}
