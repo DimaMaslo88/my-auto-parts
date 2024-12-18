@@ -22,10 +22,10 @@ dispatch(GetUserCar())
             <div>
                 {userCars.map(({ id,car,model,generation,year}:UserCarsTypes)=>(
                     <ul className={style.ul} key={id}>
-                        <li className={style.li}> Название авто  {car}</li>
-                        <li className={style.li}> Модель  {model}</li>
-                        <li className={style.li}> Поколение {generation}</li>
-                        <li className={style.li}> Год выпуска {year} </li>
+                        <li className={style.li}> Название авто : {car}</li>
+                        <li className={style.li}> Модель : {model}</li>
+                        <li className={style.li}> Поколение :{generation}</li>
+                        <li className={style.li}> Год выпуска :  {year} </li>
                     </ul>
                 ))}
 
