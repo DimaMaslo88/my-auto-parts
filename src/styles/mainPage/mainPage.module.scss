@@ -16,11 +16,17 @@
 
   .image {
     border-radius: 10px;
-    height: 400px;
-    width: 500px;
+    height: 300px;
+    width: 400px;
+    animation: image 2s forwards;
 
   }
 
 }
 
+@keyframes image {
+  100% {
+    transform: scale(1.2);
+  }
+}
 
