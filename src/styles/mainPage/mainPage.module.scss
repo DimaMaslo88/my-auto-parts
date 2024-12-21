@@ -1,18 +1,22 @@
-.mainPageContainer{
+.mainPageContainer {
   display: flex;
   justify-content: space-around;
   padding: 40px 10px 20px 10px;
   height: 100vh;
-  .ul{
+
+  .ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    .li{
+
+    .li {
       padding: 20px;
     }
   }
-  .image{
-height: 50%;
+
+  .image {
+    border-radius: 10px;
+    height: 400px;
     width: 500px;
 
   }
