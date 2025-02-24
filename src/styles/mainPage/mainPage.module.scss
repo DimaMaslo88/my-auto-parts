@@ -1,3 +1,5 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
 .mainPageContainer {
   display: flex;
   justify-content: space-around;
@@ -11,6 +13,7 @@
 
     .li {
       padding: 20px;
+
     }
   }
 
