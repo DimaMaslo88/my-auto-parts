@@ -6,7 +6,7 @@ import {useAppDispatch} from "utils/hooks";
 import {selectIsLoading, selectUserCars} from "bll/selectors";
 import {useSelector} from "react-redux";
 import {UserCarsTypes} from "types/userCarsTypes";
-import {DotLoader} from "react-spinners";
+import {RingLoader} from "react-spinners";
 import st from "styles/spinner/spiner.module.scss"
 
 
@@ -19,7 +19,7 @@ const dispatch =useAppDispatch()
 dispatch(GetUserCar())
 
     },[])
-    if(isLoading) return <div className={st.spinner}><DotLoader size={100} color='#0c267e' /></div>
+    if(isLoading) return <div className={st.spinner}><RingLoader  size={100} color='#AFD275' /></div>
 
         return (
             <div className={style.mainPageContainer}>
