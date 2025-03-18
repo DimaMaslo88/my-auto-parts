@@ -2,11 +2,13 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 export const appState:AppStateType = {
     isLoading:false,
-    isAuth:false
+    isAuth:false,
+    isRegistered:false
 }
 export type AppStateType={
     isLoading:boolean
     isAuth:boolean
+    isRegistered:boolean
 }
 const slice = createSlice({
     name:"AppSlice",
@@ -17,6 +19,9 @@ const slice = createSlice({
         },
         setAuth(state,action:PayloadAction<{isAuth:boolean}>){
             state.isAuth = action.payload.isAuth
+        },
+        setRegistered(state,action:PayloadAction<{isRegistered:boolean}>){
+            state.isAuth = action.payload.isRegistered
         }
     }
 }
@@ -25,5 +30,6 @@ const slice = createSlice({
 export const appReducer = slice.reducer
 export const {
    setLoading,
-    setAuth
+    setAuth,
+    setRegistered
 } = slice.actions
