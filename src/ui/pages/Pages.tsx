@@ -3,6 +3,7 @@ import {Routes, Route,Navigate} from "react-router-dom";
 import {MainPage} from "ui/pages/mainPage/MainPage";
 import {Parts} from "ui/pages/parts/Parts";
 import {UserPage} from "ui/pages/userPage/UserPage";
+import {Authorization} from "ui/components/authorization/Authorization";
 
 
 
@@ -15,6 +16,7 @@ export const Pages = () => {
                     <Route path='/mainPage' element={<MainPage/>}/>
                     <Route path='/parts' element={<Parts/>}/>
                     <Route path='/userPage' element={<UserPage/>}/>
+                    <Route path='/authPage' element={<Authorization/>}/>
                 </Routes>
             </div>
         );
