@@ -1,10 +1,10 @@
 import React from 'react';
 import {AvatarIcon} from "ui/assets/icons/Avatar-icon";
 import style from 'styles/header/header.module.scss'
-import {Link, useNavigate,NavLink} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {selectIsAuth} from "bll/selectors";
-import {Authorization} from "ui/components/authorization/Authorization";
+
 
 
 export const Header = () => {
@@ -26,7 +26,7 @@ export const Header = () => {
                                     // height={100}
                                     className={style.avaLogo}
                                     onClick={linkToProfilePage}
-            />: <NavLink to='/authPage'>LogIn</NavLink>}
+            />: <Link to='/authPage' className={style.logInLink}>Войти</Link>}
 
         </div>
     );

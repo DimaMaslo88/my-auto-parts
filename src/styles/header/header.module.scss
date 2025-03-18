@@ -29,8 +29,16 @@
       color: $textColor2;
     }
   }
-.avaLogo{
-  cursor: pointer;
-}
+
+  .avaLogo {
+    cursor: pointer;
+  }
+
+  .logInLink {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    @include text($fontFamily, 20px)
+  }
 }
 
