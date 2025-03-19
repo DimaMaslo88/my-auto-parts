@@ -4,13 +4,14 @@ import {MainPage} from "ui/pages/mainPage/MainPage";
 import {Parts} from "ui/pages/parts/Parts";
 import {UserPage} from "ui/pages/userPage/UserPage";
 import {Authorization} from "ui/components/authorization/Authorization";
+import style from "styles/pages/pages.module.scss"
 
 
 
 export const Pages = () => {
 
         return (
-            <div>
+            <div className={style.pagesContainer}>
                 <Routes>
                     <Route path='/' element={<Navigate to='/mainPage'/>}/>
                     <Route path='/mainPage' element={<MainPage/>}/>

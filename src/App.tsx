@@ -4,8 +4,11 @@ import {Footer} from "ui/components/footer/Footer";
 import {Pages} from "ui/pages/Pages";
 
 
+
 function App() {
+
     return (
+
         <div>
             <Header/>
             <Pages/>

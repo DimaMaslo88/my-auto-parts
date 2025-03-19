@@ -8,11 +8,11 @@ import {selectIsAuth} from "bll/selectors";
 
 
 export const Header = () => {
-    const navigator = useNavigate()
+    const navigate = useNavigate()
     const isAuth = useSelector(selectIsAuth)
 
     const linkToProfilePage = () => {
-        navigator('userPage')
+        navigate('userPage')
     }
 
     return (
