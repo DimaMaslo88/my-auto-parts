@@ -8,7 +8,7 @@ import {useSelector} from "react-redux";
 import {UserCarsTypes} from "types/userCarsTypes";
 import {RingLoader} from "react-spinners";
 import st from "styles/spinner/spiner.module.scss"
-import {useNavigate} from "react-router-dom";
+
 
 
 export const MainPage = () => {
